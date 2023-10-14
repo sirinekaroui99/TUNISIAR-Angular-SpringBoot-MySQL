@@ -1,0 +1,67 @@
+<div class="modal-header" *ngIf=!id>
+    <h4 class="modal-title">Ajout de vols</h4>
+  </div>
+  <div class="modal-body" *ngIf=!id>
+    <form (submit)="onAddFlight(addForm)">
+      <div class="form-group">
+        <label for="depart">Départ :</label>
+        <input type="text" class="form-control" id="depart" [(ngModel)]="depart" name="depart" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="destination">Destination :</label>
+        <input type="text" class="form-control" id="destination" [(ngModel)]="destination" name="destination" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="heureDepart">Heure de départ :</label>
+        <input type="time" class="form-control" id="heureDepart" [(ngModel)]="heureDepart" name="heureDepart" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="voyageurs">Type de vol :</label>
+        <select class="form-control" id="type" [(ngModel)]="type" name="type" required>
+          <option value="direct_voyageurs">Direct Voyageurs</option>
+          <option value="transition_voyageurs">Transition Voyageurs</option>
+          <option value="marchandises-coulis">Marchandises/Coulis</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+      <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button>
+    </form>
+  </div>
+  <div class="modal-header" *ngIf=id>
+    <h4 class="modal-title">Modifier le Vol</h4>
+  </div>
+  <div class="modal-body" *ngIf=id>
+    <form >
+      <div class="form-group">
+        <label for="depart">Départ :</label>
+        <input type="text" class="form-control" id="depart" [(ngModel)]="depart" name="depart" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="destination">Destination :</label>
+        <input type="text" class="form-control" id="destination" [(ngModel)]="destination" name="destination" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="heureDepart">Heure de départ :</label>
+        <input type="time" class="form-control" id="heureDepart" [(ngModel)]="heureDepart" name="heureDepart" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="voyageurs">Type de vol :</label>
+        <select class="form-control" id="type" [(ngModel)]="type" name="type" required>
+          <option value="direct_voyageurs">Direct Voyageurs</option>
+          <option value="transition_voyageurs">Transition Voyageurs</option>
+          <option value="marchandises-coulis">Marchandises/Coulis</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" (click)="updateFlight(id)">Modifier</button>
+      <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button>
+    </form>
+  </div>
+  

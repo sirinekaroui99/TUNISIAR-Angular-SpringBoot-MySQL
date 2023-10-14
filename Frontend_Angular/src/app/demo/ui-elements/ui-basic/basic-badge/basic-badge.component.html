@@ -1,0 +1,46 @@
+ 
+  <div class="col-xl-12">
+    <app-card
+      cardTitle="Liste des vols"
+      [options]="false"
+       
+      
+    >
+    
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead >
+            <tr>
+              <th>#</th>
+              <th>Départ</th>
+              <th>Destination</th>
+              <th>Heure</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of flights ;let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{item.depart}}</td>
+              <td>{{item.destination}}</td>
+              <td>{{item.hour}}</td>
+              <td>{{item.type}}</td>
+              <td class="td">  
+                <button type="button" class="btn btn-icon btn-info " (click)="view(item.id)" >
+                  <i class="feather icon-eye my-custom-icon"  ></i>
+                </button>
+              <button type="button" class="btn btn-icon btn-danger " (click)="deleteFlight(item.id)">
+                <i class="feather icon-trash-2 my-custom-icon"></i>
+              </button>
+              <button class="action" type="button" class="btn btn-icon btn-warning" (click)="update(item.id)">
+                <i class="feather icon-edit my-custom-icon"></i>
+              </button> 
+            </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </app-card>
+  </div> 

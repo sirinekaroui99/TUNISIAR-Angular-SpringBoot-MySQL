@@ -1,0 +1,35 @@
+<div class="auth-wrapper main">
+  <div class="auth-content form-container">
+    <div class="card transparent-card">
+      <div class="row align-items-center text-center">
+        <div class="col-md-12">
+          <div class="card-body">
+            <img src="assets/images/logo.png" alt="" class="img-fluid mb-4">
+            
+            <hr style="margin-bottom: 30px; margin-top:-10px">
+            <div  >
+              <div class="input-container mb-3">
+                <div class="input-group input-container">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="feather icon-mail icon"></i></span>
+                  </div>
+                  <input type="email" class="form-control custom-input" placeholder="Adresse email" [(ngModel)]="email">
+                </div>
+              </div>
+              <div class="input-container mb-4">
+                <div class="input-group input-container">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="feather icon-lock icon"></i></span>
+                  </div>
+                  <input type="password" class="form-control custom-input" placeholder="Mot de passe" [(ngModel)]="password">
+                </div>
+              </div>
+             
+              <button class="btn btn-block custom-btn mb-1"   routerLink="/basic/vols" (click)="loginUser()">Se connecter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

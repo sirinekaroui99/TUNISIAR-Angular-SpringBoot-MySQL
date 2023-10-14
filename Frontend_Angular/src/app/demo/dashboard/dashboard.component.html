@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="{{ sale.design }} col-xl-4" *ngFor="let sale of sales">
+    <app-card [hidHeader]="true">
+      <h6 class="mb-4">{{ sale.title }}</h6>
+      <div class="row d-flex align-items-center">
+        <div class="col-9">
+          <h3 class="f-w-300 d-flex align-items-center m-b-0">
+            <i class="feather {{ sale.icon }} f-30 m-r-10"></i>{{ sale.amount }}
+          </h3>
+        </div>
+        <div class="col-3 text-end">
+          <p class="m-b-0">{{ sale.percentage }}</p>
+        </div>
+      </div>
+      <div class="m-t-30">
+        <ngb-progressbar
+          type="text-primary"
+          height="7px"
+          [value]="sale.progress"
+        ></ngb-progressbar>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-xl-8 col-md-6">
+    <app-card cardTitle="Users From United States">
+      <div id="world-low" style="height: 450px"></div>
+    </app-card>
+  </div>
+  
+ 
+  <div class="col-xl-4 col-md-6">
+    <app-card cardTitle="Rating">
+      <div class="row align-items-center justify-content-center m-b-20">
+        <div class="col-6">
+          <h2 class="f-w-300 d-flex align-items-center float-start m-0">
+            4.7 <i class="fas fa-star f-10 m-l-10 text-c-yellow"></i>
+          </h2>
+        </div>
+        <div class="col-6">
+          <h6 class="d-flex align-items-center float-end m-0">
+            0.4 <i class="fas fa-caret-up text-c-green f-22 m-l-10"></i>
+          </h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12" *ngFor="let list of progressing">
+          <h6 class="align-items-center float-start">
+            <i class="fas fa-star f-10 m-r-10 text-c-yellow"></i
+            >{{ list.number }}
+          </h6>
+          <h6 class="align-items-center float-end">{{ list.amount }}</h6>
+          <div class="m-t-30 m-b-20">
+            <ngb-progressbar
+              type="text-primary"
+              height="6px"
+              [value]="list.progress"
+            ></ngb-progressbar>
+          </div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+   
+</div>

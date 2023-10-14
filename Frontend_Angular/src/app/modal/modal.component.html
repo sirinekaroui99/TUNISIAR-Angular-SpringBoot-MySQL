@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title">Informations de vol</h4>
+  </div>
+  <div class="modal-body">
+    <h5>Cabin crew</h5>
+    <ul>
+      <li *ngFor="let member of staffCC">{{ member.name }}</li>
+    </ul>
+  
+    <h5>Pilotes</h5>
+    <ul>
+      <li *ngFor="let pilot of staffPC">{{ pilot.name }}</li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="annuler()">Fermer</button>
+  </div>
